@@ -9,10 +9,13 @@
 - `golang-migrate`:
   - [Download](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
   - `migrate --version`
+- `sqlc` (if not to be used as docker)
+  - [Download](https://docs.sqlc.dev/en/latest/overview/install.html)
+  - `sqlc version`
 
-## Run db docker locally
+## Run docker containers locally
 
-To run database directly inside container, please follow below steps:
+To run container, please follow below steps:
 
 - Download docker
 
@@ -41,6 +44,7 @@ make remove
 
 ```bash
 make logs_db
+make logs_sqlc
 ```
 
 - To connect to Postgres database manually
