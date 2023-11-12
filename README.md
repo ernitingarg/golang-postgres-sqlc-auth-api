@@ -2,10 +2,13 @@
 
 ## Prerequisites installation
 
-### Tools
-
-- Dbeaver Universal database tool: [Download](https://dbeaver.io/download/)
-- Make: [Download](https://gnuwin32.sourceforge.net/packages/make.htm) or `choco install make`
+- Dbeaver Universal database GUI tool: [Download](https://dbeaver.io/download/)
+- Make:
+  - [Download](https://gnuwin32.sourceforge.net/packages/make.htm) or `choco install make`
+  - `make --version`
+- `golang-migrate`:
+  - [Download](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)
+  - `migrate --version`
 
 ## Run db docker locally
 
@@ -16,16 +19,22 @@ To run database directly inside container, please follow below steps:
   - [Windows](https://docs.docker.com/desktop/install/windows-install/)
   - [Ubuntu](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
 
-- Run db docker container
+- Run docker containers
 
 ```bash
-make start_db
+make start
 ```
 
-- To stop docker container
+- To stop docker containers
 
 ```bash
-make stop_db
+make stop
+```
+
+- To remove docker containers
+
+```bash
+make remove
 ```
 
 - To see containers logs
@@ -45,4 +54,19 @@ make logs_db
 
 ```bash
 \dt;
+```
+
+## Migration
+
+- To create migration
+
+```bash
+make migrate_create
+```
+
+- To apply migration
+
+```bash
+make migrate_up
+make migrate_down
 ```
